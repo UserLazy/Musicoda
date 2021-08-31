@@ -31,7 +31,7 @@ links=[]
 finalurl=""
 C_PLAY=False
 Y_PLAY=False
-STREAM=os.environ.get("STREAM_URL", "https://t.me/DumpPlaylist/30")
+STREAM=os.environ.get("STREAM_URL", None)
 regex = r"^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+"
 match = re.match(regex,STREAM)
 regex_ = r"http.*"
@@ -82,8 +82,8 @@ class Config:
     EDIT_TITLE = os.environ.get("EDIT_TITLE", True)
     if EDIT_TITLE == "NO":
         EDIT_TITLE=None
-    DURATION_LIMIT=int(os.environ.get("MAXIMUM_DURATION", 15))
-    DELAY = int(os.environ.get("DELAY", 10))
+    DURATION_LIMIT=int(os.environ.get("MAXIMUM_DURATION", 25))
+    DELAY = int(os.environ.get("DELAY", 5))
     API_HASH = os.environ.get("API_HASH", "")
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "")     
     SESSION = os.environ.get("SESSION_STRING", "")
