@@ -65,7 +65,7 @@ def stop_and_restart():
 bot.run(main())
 bot.start()
 
-@bot.on_message(filters.command(["restart", f"restart@{USERNAME}"]) & filters.user(Config.ADMINS) & (filters.chat(CHAT) | filters.private))
+@bot.on_message(filters.command(["restartmusic", f"restart@{USERNAME}"]) & filters.user(Config.ADMINS) & (filters.chat(CHAT) | filters.private))
 async def restart(client, message):
     await message.reply_text("🔄 Updating and Restarting...")
     await asyncio.sleep(3)
@@ -96,20 +96,8 @@ bot.send(
                 description="Check if bot alive"
             ),
             types.BotCommand(
-                command="help",
-                description="Shows help message"
-            ),
-            types.BotCommand(
                 command="play",
                 description="Play song from youtube/audiofile"
-            ),
-            types.BotCommand(
-                command="splay",
-                description="Play song from JioSaavn, use -a flag to play an album."
-            ),
-            types.BotCommand(
-                command="cplay",
-                description="Plays music files from a channel."
             ),
             types.BotCommand(
                 command="yplay",
@@ -126,22 +114,6 @@ bot.send(
             types.BotCommand(
                 command="clearplaylist",
                 description="Clears the current playlist"
-            ),
-            types.BotCommand(
-                command="shuffle",
-                description="Shuffle the playlist"
-            ),
-            types.BotCommand(
-                command="export",
-                description="Export current playlist as json file for future use."
-            ),
-            types.BotCommand(
-                command="import",
-                description="Import a previously exported playlist."
-            ),
-            types.BotCommand(
-                command="upload",
-                description="Upload current playing song as audio file."
             ),
             types.BotCommand(
                 command="skip",
@@ -164,14 +136,6 @@ bot.send(
                 description="Stops Playing"
             ),
             types.BotCommand(
-                command="radio",
-                description="Start radio / Live stream"
-            ),
-            types.BotCommand(
-                command="stopradio",
-                description="Stops radio/Livestream"
-            ),
-            types.BotCommand(
                 command="replay",
                 description="Replay from beggining"
             ),
@@ -188,7 +152,7 @@ bot.send(
                 description="Resume the paused song"
             ),
             types.BotCommand(
-                command="mute",
+                command="mutehelper",
                 description="Mute in VC"
             ),
             types.BotCommand(
@@ -196,11 +160,11 @@ bot.send(
                 description="Set volume between 0-200"
             ),
             types.BotCommand(
-                command="unmute",
+                command="unmutehelper",
                 description="Unmute in VC"
             ),
             types.BotCommand(
-                command="restart",
+                command="restartmusic",
                 description="Update and restart the bot"
             )
         ]
