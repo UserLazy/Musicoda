@@ -28,12 +28,11 @@ from config import Config
 REPLY_MESSAGE=Config.REPLY_MESSAGE
 buttons = [
     [
-        InlineKeyboardButton('⚡️Make Own Bot', url='https://heroku.com/deploy?template=https://github.com/subinps/MusicPlayer'),
-        InlineKeyboardButton('🧩 Source Code', url='https://github.com/subinps/MusicPlayer'),
+        InlineKeyboardButton('⚡️ Support', url='https://t.me/OdaSupport'),
+        InlineKeyboardButton('🧩 Update', url='https://UserLazyXBot'),
     ],
     [
         InlineKeyboardButton('🎧Play Music', url=f'https://t.me/{USERNAME}'),
-        InlineKeyboardButton('👨🏼‍🦯 Help', callback_data='help')       
     ]
     ]
 @Client.on_inline_query()
@@ -42,8 +41,8 @@ async def search(client, query):
     if query.query == "ORU_MANDAN_PM_VANNU":
         answers.append(
             InlineQueryResultArticle(
-                title="Deploy",
-                input_message_content=InputTextMessageContent(f"{REPLY_MESSAGE}\n\n<b>You can't use this bot in your group, for that you have to make your own bot from the [SOURCE CODE](https://github.com/subinps/MusicPlayer) below.</b>", disable_web_page_preview=True),
+                title="LOL",
+                input_message_content=InputTextMessageContent(f"{REPLY_MESSAGE}\n\n<b>You can't use this bot in your group, for that you have to make your own bot.</b>",
                 reply_markup=InlineKeyboardMarkup(buttons)
                 )
             )
